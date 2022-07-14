@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String [] args) {
+        System.out.println("enter number of employees");
+
+        Scanner sc = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
+        int n = sc.nextInt();
+        Employee e[] = new Employee[n];
+        int i;
+        for (i = 0; i < n; i++) {
+            System.out.println("enter eid of employee" + i);
+            int eid = sc.nextInt();
+            System.out.println("enter eid of employee" + i);
+            String ename = s.next();
+            System.out.println("enter esal of employee" + i);
+            int esal = sc.nextInt();
+            Employee emp = new Employee(eid, ename, esal);
+            e[i] = emp;
+        }
+
+        for (Employee y : e)
+        {
+            y.display();
+        }
+        System.out.println("enter eid ");
+        int eid=sc.nextInt();
+        for(Employee y:e)
+        {
+            if (y.eid==eid)
+                y.display();
+
+        }
+
+    }
+}
+public class Employee{
+    int eid,esal;
+    String ename;
+    public Employee(int eid,String ename,int esal)
+    {
+        this.eid=eid;
+        this.ename=ename;
+        this.esal=esal;
+
+    }
+    public void display()
+    {
+        System.out.println(eid+ename+esal);
+
+    }
+
+}
