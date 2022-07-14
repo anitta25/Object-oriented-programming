@@ -1,0 +1,65 @@
+public class Employee {
+    int eid; String ename; int esal;
+    public Employee(){}
+    public Employee(int eid,String ename,int esal)
+    {
+        this.eid=eid;
+        this.ename=ename;
+        this.esal=esal;
+
+    }
+    public void display()
+    {
+        System.out.print(""+eid+""+ename+""+esal);
+
+    }
+}
+public class Teacher extends Employee{
+    int age;String dept;
+    public Teacher(){
+
+    }
+    public Teacher(int eid,String name,int sal,int age,String dept)
+    {
+        super(eid,name,sal);
+        this.age=age;
+        this.dept=dept;
+
+    }
+    public void displayT()
+    {super.display();
+        System.out.println("age"+age+""+dept);
+
+
+
+    }
+
+}
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String []args)
+    {
+   System.out.println("enter number of teachers");
+   Scanner sc=new Scanner(System.in);
+        Scanner s=new Scanner(System.in);
+
+        int n=sc.nextInt();
+        Teacher t[] =new Teacher[n];
+
+   for(int i=0;i<n;i++) {
+       System.out.println("enter teacher details" + i);
+       int eid = sc.nextInt();
+       String name = s.nextLine();
+       int esal = sc.nextInt();
+       int age = sc.nextInt();
+       String dept = s.nextLine();
+       Teacher t1 = new Teacher(eid, name, esal, age, dept);
+       t[i] = t1;
+   }
+       for(Teacher y:t)
+       y.displayT();;
+
+   }
+
+    }
