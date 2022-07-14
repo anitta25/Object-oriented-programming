@@ -1,0 +1,67 @@
+public class Product implements Bill{
+    int id;
+    String name;
+    int qty,unit,total;
+    public Product(int id,String name,int qty,int unit){
+        this.id=id;
+        this.name=name;
+        this.qty=qty;
+        this.unit=unit;
+    }
+    public void calculate()
+    {
+        total=qty*unit;
+    }
+public void display()
+{
+    System.out.printf("\n%5s%10s%6s%5s%6s",id,name,qty,unit,total);
+    System.out.println("\nnet amount"+total);
+
+ interface Bill {
+    public void calculate();
+
+}
+
+}
+}
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String []args)
+    {
+        System.out.println("enter number of orders");
+        Scanner sc=new Scanner(System.in);
+        Scanner s=new Scanner(System.in);
+        int n=sc.nextInt();
+        Product p[][]=new Product[n][];
+        int i,j;
+        for(i=0;i<n;i++)
+        {
+            System.out.println("enter number of products for order"+i);
+            int m=sc.nextInt();
+            p[i]=new Product[m];
+            for(j=0;j<m;j++)
+            { System.out.println("enter product details");
+            int id =sc.nextInt();
+            String name = s.next();
+            int qty=sc.nextInt();
+            int unit=sc.nextInt();
+
+            Product p1=new Product(id,name,qty,unit);
+            p[i][j]=p1;
+
+        }}
+        for(i=0;i<n;i++) {
+            System.out.println("order" + i + "\n-----------------------------------------");
+
+            System.out.printf("%5s%10s%6s%5s%6s\n-------------------------------------------------", "id", "name", "qty", "unit", "total");
+
+            for (j = 0; j < p[i].length; j++)
+                p[i][j].display();
+
+
+        }
+
+
+    }
+}
