@@ -1,0 +1,35 @@
+public class Fthread implements Runnable{
+    public void run()
+    {
+        for(int i=2;i<6;i=i+2)
+            System.out.println("even"+i);
+
+    }
+}
+public class Even implements Runnable {
+    public void run() {
+        int a=0,b=1,c=0;
+        System.out.println("fib"+a);
+        System.out.println("fib"+b);
+        for(int i=0;i<8;i++){
+
+
+
+            c=a+b;
+        System.out.println("fib"+c);
+
+            a=b;
+        b=c;}
+
+    }
+}public class Main {
+    public static void main(String [] args)
+    {
+        Fthread f=new Fthread();
+        Even e=new Even();
+        Thread t1=new Thread(f);
+        Thread t2=new Thread(e);
+        t1.start();
+        t2.start();
+    }
+}
