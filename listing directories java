@@ -1,0 +1,31 @@
+package com.company;
+import java.io.File;
+
+public class Main {
+    public static void recursievprint(File [] arr,int index,int level)
+    {if(index==arr.length)
+    return;
+    for(int i=0;i<level;i++)
+    System.out.println("\t");
+    if(arr[index].isFile())
+        System.out.println(arr[index].getName());
+
+else if(arr[index].isDirectory())
+        {
+            System.out.println("[" + arr[index].getName() + "]");
+            recursievprint(arr[index].listFiles(),0,(level+1));
+        }            recursievprint(arr, ++index, level);
+    }
+    public static void main(String [] args) {
+   String maindirpath="C:\\anitta";
+    File maindir=new File(maindirpath);
+    if(maindir.exists()&&maindir.isDirectory())
+    {
+    File arr[]=maindir.listFiles();
+    System.out.println("*****");
+    System.out.println("files from main directory :"+maindir);
+    System.out.println("****");
+    recursievprint(arr,0,0);
+    }
+    }}
+
