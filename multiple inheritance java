@@ -1,0 +1,48 @@
+import java.util.Scanner;
+interface Exam
+{
+public void input();
+public void display();
+}
+interface Sports {
+    public void sinput();
+
+    public void sscore();
+}
+    public class Score implements Exam,Sports
+    {int score,sscore;
+        public  void input()
+    {
+        Scanner sc=new Scanner(System.in);
+         score=sc.nextInt();
+
+
+    }
+    public void display()
+    {
+        System.out.println(score);
+
+    }
+        public  void sinput()
+        {
+            Scanner sc=new Scanner(System.in);
+            sscore=sc.nextInt();
+
+
+        }
+        public void sscore()
+        {
+            System.out.println(sscore);
+
+        }
+
+public class Main {
+    public static void main(String[ ]args){
+        Score s=new Score();
+        s.input();
+        s.sinput();
+        s.display();
+        s.sscore();
+
+
+}}
