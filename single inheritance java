@@ -1,0 +1,49 @@
+public class Student extends Teacher {
+    int rollno;String address;
+    public Student(int rollno,String address,String dept,int id,String name)
+    {
+  super(id, name, dept);
+    this.address=address;
+    this.rollno = rollno;
+    }
+    public void show()
+    {super.display();
+     System.out.println(address+rollno);}
+}
+public class Teacher{
+    int  id;
+    String name,dept;
+    public Teacher(int id,String name,String dept)
+
+    {this.id = id;
+        this.dept=dept;
+        this.name = name;
+
+    }
+    public void display()
+    {System.out.println(id+name+dept);}
+}import java.util.Scanner;
+
+public class Main{
+    public static void main(String args[])
+    {
+        System.out.println("enter details of teacher\n id\n dept\nname");
+        Scanner sc=new Scanner(System.in);
+        Scanner s=new Scanner(System.in);
+        int id=sc.nextInt();
+        String name=s.nextLine();
+        String dept=s.nextLine();
+        Teacher t=new Teacher(id,name,dept);
+        System.out.println("enter details of student\n id\n dept\nname\naddress\nrollno");
+
+        id=sc.nextInt();
+        dept=s.nextLine();
+        name=s.nextLine();
+        String address=s.next();
+        int roll=sc.nextInt();
+        Student st=new Student(roll,address,dept,id,name);
+        t.display();
+        st.show();
+
+    }
+}
