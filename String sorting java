@@ -1,0 +1,25 @@
+import java.awt.*;
+import java.util.Scanner;
+import  java.util.Arrays;
+public class Main {
+    public static void main(String []args)
+    {   Scanner sc=new Scanner(System.in);
+        int i,j;
+        System.out.println("enter number of strings");
+        int n=sc.nextInt();
+        String s[]=new String[n+1];
+        System.out.println("enter  strings");
+        for(i=0;i<n+1;i++)
+            s[i]=sc.nextLine();
+        System.out.println("enter ch");
+        String temp;
+        int ch=sc.nextInt();
+        switch(ch)
+        {
+            case 1:Arrays.sort(s);
+                System.out.println(Arrays.toString(s));
+                break;
+            case 2:for(i=0;i<n-1;i++)
+                for(j=0;j<n-1-i;j++)
+                    if(s[j].compareTo(s[j+1])>0)
+                    {
